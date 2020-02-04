@@ -169,11 +169,18 @@ class YahtzeeTests {
 		assertEquals(6, result);
 	}
 	@Test
-	void pairTest() {
+	void pairTestPass() {
 		int[] dice = { 5, 6, 4, 5, 4 };
 		int result = YahtzeeMethods.Pair(dice);
 
 		assertEquals(10, result);
+	}
+	@Test
+	void pairTestFail() {
+		int[] dice = { 1, 6, 2, 5, 4 };
+		int result = YahtzeeMethods.Pair(dice);
+
+		assertEquals(0, result);
 	}
 
 	@Test
@@ -184,13 +191,19 @@ class YahtzeeTests {
 		assertEquals(12, result);
 	}
 	@Test
-	void twoPairTest() {
+	void twoPairTestPass() {
 		int[] dice = { 5, 6, 4, 5, 4 };
 		int result = YahtzeeMethods.TwoPair(dice);
 
 		assertEquals(18, result);
 	}
+	@Test
+	void twoPairTestFail() {
+		int[] dice = { 5, 6, 2, 1, 4 };
+		int result = YahtzeeMethods.TwoPair(dice);
 
+		assertEquals(0, result);
+	}
 	@Test
 	void twoPairThroughScoreTest() {
 		int[] dice = { 6, 5, 4, 5, 6 };
@@ -199,11 +212,18 @@ class YahtzeeTests {
 		assertEquals(22, result);
 	}
 	@Test
-	void threeOfATest() {
+	void threeOfATestPass() {
 		int[] dice = { 4, 6, 4, 5, 4 };
 		int result = YahtzeeMethods.ThreeOfA(dice);
 
 		assertEquals(12, result);
+	}
+	@Test
+	void threeOfATestFail() {
+		int[] dice = { 4, 6, 2, 5, 4 };
+		int result = YahtzeeMethods.ThreeOfA(dice);
+
+		assertEquals(0, result);
 	}
 
 	@Test
